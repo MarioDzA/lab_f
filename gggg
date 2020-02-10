@@ -1,0 +1,43 @@
+Scanner s = new Scanner(System.in);
+        int n;
+        System.out.println("Establezca el numero de estudiantes: ");
+        n = s.nextInt();
+        int cod[] = new int[n + 1];
+        double not[] = new double[n + 1];
+        for (int i = 0; i < n; i++) {
+            System.out.println("Digite el Codigo del Estudiante: ");
+            cod[i] = s.nextInt();
+            System.out.println("Digite la nota del Estudiantes");
+            not[i] = s.nextDouble();
+            while (not[i] > 5 || not[i] < 0) {
+                System.out.println("La nota debe ser entre 0 y 5, corrija la nota ");
+                not[i] = s.nextDouble();
+            }
+        }
+        double men = not[0];
+        for (int i = 0; i < n; i++) {
+            if (not[i] < men) {
+                men = not[i];
+            }
+        }
+        double may = not[0];
+        int aux = 0;
+        for (int i = 0; i < n; i++) {
+            if (not[i] > may) {
+                may = not[i];
+                aux = i;
+            }
+        }
+        double prom, prome = 0;
+        for (int i = 0; i < n; i++) {
+            prome = prome + not[i];
+        }
+        int k = 0;
+        do {
+                
+        } while (k == 0);
+
+        prom = prome / n;
+        System.out.println("La menor nota es " + men);
+        System.out.println("La mayor nota le pertence a " + cod[aux]);
+        System.out.println("Promedio de notas " + prom);
