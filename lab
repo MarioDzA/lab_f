@@ -1,0 +1,56 @@
+        Scanner sc = new Scanner(System.in);
+        int cod, aux = 0, h, r=1, n=0;
+        int M[][] = new int[999][3];
+        M[0][0] = 111;
+        M[0][1] = 1111;
+        M[0][2] = 11111;
+        while (r==1){
+        System.out.println("Ingrese el codigo del libro que busque ");
+        cod = sc.nextInt();
+        while (aux < 999) {
+            if (cod == M[aux][0]) {
+                for (int j = 0; j < 3; j++) {
+                    System.out.print(" " + M[aux][j]);
+                }
+                System.out.println("");
+                break;
+            }
+            aux++;
+        }
+        if (aux == 999) {
+            System.out.println("No se encontro ningun libro con este codigo");
+            System.out.println("Desea agregar un libro \n[1] SI \n[2] NO");
+            h = sc.nextInt();
+            if (h == 1) {
+                for (int i = n; i < n; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        if (j == 0) {
+                            System.out.println("Codigo del libro ");
+                        }
+                        if (j == 1) {
+                            System.out.println("Codigo de Ubicacion ");
+                        }
+                        if (j == 2) {
+                            System.out.println("Codigo interno");
+                        }
+                        M[i][j] = sc.nextInt();
+                    }
+                }
+            } else {
+                System.out.println("Desea continuar \n [1] SI \n [2] NO");
+                r=sc.nextInt();
+            }
+        }
+        n++;
+        System.out.println("Desea continuar \n [1] SI \n [2] NO");
+        r=sc.nextInt();
+        /*Escritura
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(" " + M[i][j]);
+            }
+            System.out.println("");
+        }
+         */
+    }
+        System.out.println("garcias");
