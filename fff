@@ -1,0 +1,45 @@
+ Scanner sc = new Scanner(System.in);
+        int n, m, may, s=0;
+        System.out.println("cantidad de filas");
+        n = sc.nextInt();
+        System.out.println("cantidad de columnas");
+        m = sc.nextInt();
+        int A[][] = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.println("posicion ["+(i+1)+"] ["+(j+1)+"]");
+                A[i][j] = sc.nextInt();
+
+            }
+        }
+        may=A[1][1];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (A[i][j]>may) {
+                    may=A[i][j];
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                s=s+A[i][j];
+            }
+        }
+        int cpri=0, num,c;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                num=A[i][j];
+                c=0;
+                for (int k = 2; k < num/2; k++) {
+                    if (num%k==0) {
+                        c=c+1;
+                    }
+                    if (c==0&num>1) {
+                        cpri=cpri+1;
+                    }
+                }
+            }
+        }
+        System.out.println("Mayor elemento "+may);
+        System.out.println("Suma total "+s);
+        System.out.println("cantidad de primos "+cpri);
