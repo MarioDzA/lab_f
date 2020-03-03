@@ -6,7 +6,7 @@
         m = sc.nextInt();
         int A[][] = new int[n][m];
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 System.out.println("posicion ["+(i+1)+"] ["+(j+1)+"]");
                 A[i][j] = sc.nextInt();
 
@@ -14,32 +14,33 @@
         }
         may=A[1][1];
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 if (A[i][j]>may) {
                     may=A[i][j];
                 }
             }
         }
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 s=s+A[i][j];
             }
         }
         int cpri=0, num,c;
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 num=A[i][j];
                 c=0;
                 for (int k = 2; k < num/2; k++) {
                     if (num%k==0) {
                         c=c+1;
                     }
+                }
                     if (c==0&num>1) {
                         cpri=cpri+1;
                     }
                 }
             }
-        }
+        
         System.out.println("Mayor elemento "+may);
         System.out.println("Suma total "+s);
         System.out.println("cantidad de primos "+cpri);
